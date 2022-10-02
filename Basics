@@ -1,0 +1,12 @@
+//vue is used for interactive webapps
+//NON-VUE:
+//address will send a request to the server 
+//then the server will handle the request and sends back the html page
+//SO... browser is making new requests on every click to the page
+
+//VUE:
+//every click on the website will not go to the server
+//instead it gets sent to VUE and does what it needs
+//called- single page application(only one html page)
+
+//stand along widgets and components
