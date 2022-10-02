@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Vue</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+        .box{
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello Vue </h1>
+
+    <!-- this will call the app.js and can utilize values within its data (ONLY WITHIN div id=app!!) -->
+    <div id="app">
+
+        <!-- sets a basic if statment  -->
+        <!--Printing List of Data!!-->
+        <div v-if="showBooks">
+            <ul>
+                <li v-for="book in books">
+                    <h3> {{book.title}}</h3>
+                    <p> {{book.author}}</p>
+                </li>
+            </ul>
+        </div>
+        <button @click = "toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>
+            <span v-else>Show Books</span>
+            <!-- <span v-if="!showBooks">Show Books</span> -->
+        </button>
+
+        <div v-show="showBooks">currently showing books </div>
+
+        <br>
+        <!--mouse events!-->
+        <div class="box" @mouseover="handleEvent($event,5)">mouseover(enter)</div>
+        <div class="box" @mouseleave="handleEvent">mouseleave</div>
+        <div class="box" @dblclick="handleEvent">double click</div>
+        <div class="box" @mousemove="handleMousemove">position {{x}} {{y}}</div>
+
+
+        
+
+
+
+
+        <!-- <p>{{ title }} - {{ author }} - {{age}}</p> -->
+        <!-- Insert a title variabel -->
+        <!-- <p>The Final Empire</p> -->
+        <!-- <h2>I am the template now</h2> -->
+        <!-- <button v-on:click="age++">Increase Age</button>
+        <button v-on:click="age--">Decrease Age</button> -->
+        <!-- Instead of doing v-on:click for an "event" you can do @  -->
+        <!-- <div @click="changeTitle('Oathbringer')">Change Book Title</div> -->
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
